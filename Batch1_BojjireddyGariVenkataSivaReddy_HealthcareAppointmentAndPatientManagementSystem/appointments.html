@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="toast-container"></div>
+
+<nav class="navbar navbar-dark bg-danger">
+    <div class="container-fluid">
+        <span class="navbar-brand">Appointment Management</span>
+        <a href="index.html" class="btn btn-light">Home</a>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    <div class="card p-3 shadow-sm">
+
+        <div class="d-flex justify-content-between">
+            <h5>Appointments</h5>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                Book Appointment
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <input type="date" id="filterDate" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <select id="filterStatus" class="form-control">
+                    <option value="">All Status</option>
+                    <option>Booked</option>
+                    <option>Completed</option>
+                    <option>Cancelled</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table mt-3">
+            <thead class="table-light">
+                <tr>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentTable"></tbody>
+        </table>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="appointmentModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form id="appointmentForm">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Book Appointment</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <h6 class="mb-3">Patient Details</h6>
+                    <input type="text" class="form-control mb-2" id="patientName" placeholder="Enter patient name">
+                    <input class="form-control mb-2" id="patientAge" type="number" placeholder="Age">
+
+                    <select class="form-control mb-2" id="patientGender">
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+
+                    <input class="form-control mb-2" id="patientPhone" placeholder="Phone">
+                    <input class="form-control mb-2" id="patientEmail" placeholder="Email">
+                    <textarea class="form-control mb-2" id="patientNotes" placeholder="Medical Notes"></textarea>
+
+                    <h6 class="mb-3 mt-3">Appointment Details</h6>
+                    <select class="form-control mb-2" id="doctorSelect"></select>
+                    <input type="date" class="form-control mb-2" id="date">
+                    <input type="time" class="form-control mb-2" id="time">
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-danger">Book</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/appointments.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

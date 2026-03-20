@@ -1,0 +1,33 @@
+body {
+    background: #f4f6f9;
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+}
+
+/* Table */
+table {
+    background: #fff;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Empty state */
+.empty {
+    text-align: center;
+    padding: 20px;
+    color: gray;
+}
+
+/* Toast position */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
